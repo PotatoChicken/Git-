@@ -1,55 +1,55 @@
-1¡¢¹ØÓÚgitÖĞ cherry-pickµÄÊ¹ÓÃ
+1ã€å…³äºgitä¸­ cherry-pickçš„ä½¿ç”¨
 
-cherry-pick Æäº¬Òå¾ÍÊÇ´ÓÆäËû·ÖÖ§ÖÚ¶àµÄcommitÖĞÑ¡³öÒ»¸öcommitÓ¦ÓÃÔÚµ±Ç°µÄ¹¤×÷·ÖÖ§ÖĞ£¬¸ÃÃüÁîĞèÒªÌá¹©Ò»¸öcommit ID×÷Îª²ÎÊı.²Ù×÷¹ı³ÌÏàµ±ÓÚ½«¸Ãcommitµ¼³öÎª²¹¶¡ÎÄ¼ş,È»ºóÔÚµ±Ç°HEADÉÏÖØ·Å,ĞÎ³ÉÎŞÂÛÄÚÈİ»¹ÊÇcommitËµÃ÷¶¼Ò»ÖÂµÄÌá½».
+cherry-pick å…¶å«ä¹‰å°±æ˜¯ä»å…¶ä»–åˆ†æ”¯ä¼—å¤šçš„commitä¸­é€‰å‡ºä¸€ä¸ªcommitåº”ç”¨åœ¨å½“å‰çš„å·¥ä½œåˆ†æ”¯ä¸­ï¼Œè¯¥å‘½ä»¤éœ€è¦æä¾›ä¸€ä¸ªcommit IDä½œä¸ºå‚æ•°.æ“ä½œè¿‡ç¨‹ç›¸å½“äºå°†è¯¥commitå¯¼å‡ºä¸ºè¡¥ä¸æ–‡ä»¶,ç„¶ååœ¨å½“å‰HEADä¸Šé‡æ”¾,å½¢æˆæ— è®ºå†…å®¹è¿˜æ˜¯commitè¯´æ˜éƒ½ä¸€è‡´çš„æäº¤.
 
-ÎÊ£ºÈçºÎ°Ñ·ÖÖ§developÖĞµÄcommit(38361a68138140827b31b72f8bbfd88b3705d77a)ºÏ²¢µ½·ÖÖ§masterÖĞ£¿
-´ğ£º
-    # ÏÈÔÚdevelopÖĞ²é¿´ÒªºÏ²¢µÄcommitµÄcommit id
+é—®ï¼šå¦‚ä½•æŠŠåˆ†æ”¯developä¸­çš„commit(38361a68138140827b31b72f8bbfd88b3705d77a)åˆå¹¶åˆ°åˆ†æ”¯masterä¸­ï¼Ÿ
+ç­”ï¼š
+    # å…ˆåœ¨developä¸­æŸ¥çœ‹è¦åˆå¹¶çš„commitçš„commit id
     git log
-    # ¼ÙÉèÊÇ commit 38361a68138140827b31b72f8bbfd88b3705d77a
+    # å‡è®¾æ˜¯ commit 38361a68138140827b31b72f8bbfd88b3705d77a
 
-    #ÇĞµ½master·ÖÖ§
+    #åˆ‡åˆ°masteråˆ†æ”¯
     git checkout master
     
-    #×îºÃ°Ñmaster¸üĞÂµ½×îĞÂ
+    #æœ€å¥½æŠŠmasteræ›´æ–°åˆ°æœ€æ–°
     git pull origin master
 
-    # ºÏ²¢commit
+    # åˆå¹¶commit
     git cherry-pick 38361a68138
     
-    1¡¢ Èç¹ûË³ÀûºÏ²¢£¬½á¹ûÊÇ£º
+    1ã€ å¦‚æœé¡ºåˆ©åˆå¹¶ï¼Œç»“æœæ˜¯ï¼š
     Finished one cherry-pick.
     # On branch master
     # Your branch is ahead of 'origin/master' by 3 commits.
     
-    2¡¢Èç¹ûºÏ²¢µÄ¹ı³ÌÖĞ³öÏÖ³åÍ»,ĞèÒªÏÈ½â¾ö³åÍ»
+    2ã€å¦‚æœåˆå¹¶çš„è¿‡ç¨‹ä¸­å‡ºç°å†²çª,éœ€è¦å…ˆè§£å†³å†²çª
     Automatic cherry-pick failed.  After resolving the conflicts,
     mark the corrected paths with 'git add <paths>' or 'git rm <paths>'
     and commit the result with: 
  
         git commit -c 15a2b6c61927e5aed6718de89ad9dafba939a90b
 
-    # ¾Í¸úÆÕÍ¨µÄ³åÍ»Ò»Ñù£¬ÊÖ¹¤½â¾ö£º
+    # å°±è·Ÿæ™®é€šçš„å†²çªä¸€æ ·ï¼Œæ‰‹å·¥è§£å†³ï¼š
 
-    # Ö´ĞĞgit status ¿´ÄÄĞ©ÎÄ¼ş³öÏÖ³åÍ»
-    git status  #²é¿´ÄÇĞ©ÎÄ¼ş³öÏÖ³åÍ»
+    # æ‰§è¡Œgit status çœ‹å“ªäº›æ–‡ä»¶å‡ºç°å†²çª
+    git status  #æŸ¥çœ‹é‚£äº›æ–‡ä»¶å‡ºç°å†²çª
     
-    ½Ó×ÅÊÖ¶¯½â¾ö³åÍ»µÄÎÄ¼ş£¬½â¾öÍêÖ®ºóÍ¨¹ıgit add°Ñ¸Ä¶¯Ìí¼Óµ½Ë÷Òı
-    git add ¸ÄµÄÎÄ¼ş
+    æ¥ç€æ‰‹åŠ¨è§£å†³å†²çªçš„æ–‡ä»¶ï¼Œè§£å†³å®Œä¹‹åé€šè¿‡git addæŠŠæ”¹åŠ¨æ·»åŠ åˆ°ç´¢å¼•
+    git add æ”¹çš„æ–‡ä»¶
     
-    #¼ÌĞøcherry-pick
+    #ç»§ç»­cherry-pick
     git cherry-pick --continue
 
-    #×îºó°Ñ¸Ä¶¯ÉÏ´«µ½·şÎñÆ÷
+    #æœ€åæŠŠæ”¹åŠ¨ä¸Šä¼ åˆ°æœåŠ¡å™¨
     git push origin master
 
-2¡¢ºÏ²¢¶à¸öcommit
+2ã€åˆå¹¶å¤šä¸ªcommit
 
-Git´Ó1.7.2°æ±¾¿ªÊ¼Ö§³ÖÅúÁ¿cherry-pick£¬¾ÍÊÇÒ»´Î¿ÉÒÔcherry-pickÒ»¸öÇø¼äµÄcommit¡£
-  1¡¢git cherry-pick <start-commit-id>..<end-commit-id>
- »òÕß
-  2¡¢git cherry-pick <start-commit-id>^..<end-commit-id>
+Gitä»1.7.2ç‰ˆæœ¬å¼€å§‹æ”¯æŒæ‰¹é‡cherry-pickï¼Œå°±æ˜¯ä¸€æ¬¡å¯ä»¥cherry-pickä¸€ä¸ªåŒºé—´çš„commitã€‚
+  1ã€git cherry-pick <start-commit-id>..<end-commit-id>
+ æˆ–è€…
+  2ã€git cherry-pick <start-commit-id>^..<end-commit-id>
 
-Ç°Õß±íÊ¾°Ñ<start-commit-id>µ½<end-commit-id>Ö®¼ä(×ó¿ªÓÒ±Õ£¬²»°üº¬start-commit-id)µÄÌá½»cherry-pickµ½µ±Ç°·ÖÖ§£»
-ºóÕß±íÊ¾°Ñ<start-commit-id>µ½<end-commit-id>Ö®¼ä(±ÕÇø¼ä£¬°üº¬start-commit-id)µÄÌá½»cherry-pickµ½µ±Ç°·ÖÖ§¡£
-ÆäÖĞ£¬<start-commit-id>µ½<end-commit-id>Ö»ĞèÒªcommit-idµÄÇ°6Î»¼´¿É£¬²¢ÇÒ<start-commit-id>ÔÚÊ±¼äÉÏ±ØĞëÔçÓÚ<end-commit-id>
+å‰è€…è¡¨ç¤ºæŠŠ<start-commit-id>åˆ°<end-commit-id>ä¹‹é—´(å·¦å¼€å³é—­ï¼Œä¸åŒ…å«start-commit-id)çš„æäº¤cherry-pickåˆ°å½“å‰åˆ†æ”¯ï¼›
+åè€…è¡¨ç¤ºæŠŠ<start-commit-id>åˆ°<end-commit-id>ä¹‹é—´(é—­åŒºé—´ï¼ŒåŒ…å«start-commit-id)çš„æäº¤cherry-pickåˆ°å½“å‰åˆ†æ”¯ã€‚
+å…¶ä¸­ï¼Œ<start-commit-id>åˆ°<end-commit-id>åªéœ€è¦commit-idçš„å‰6ä½å³å¯ï¼Œå¹¶ä¸”<start-commit-id>åœ¨æ—¶é—´ä¸Šå¿…é¡»æ—©äº<end-commit-id>

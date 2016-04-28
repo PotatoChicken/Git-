@@ -1,0 +1,20 @@
+1 保存
+
+使用git stash保存当前的操作，如果不这么做，你在切换到别的分支之前就一定要提交已经有的改动。但你当前的操作尚未完成，所以要暂时保存起来。
+
+2 查看
+
+直接使用git stash list就可以了。
+
+
+3 恢复
+
+用git stash pop stash@{num}，num 是你要恢复的操作的序号，所以你最好在回复前用git stash list查看一下。
+
+git stash pop命令是恢复stash队列中的stash@{0}，然后从记录就删除，就是常规的pop操作。
+
+
+4 删除
+
+stash存的不要过多，不然你也不知道哪个是哪个，最好随时清一清。
+把所有的记录都清空掉用git stash clear。

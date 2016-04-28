@@ -1,0 +1,23 @@
+# 查看分支合并状况
+$ git log--graph --pretty=oneline --abbrev-commit
+
+# 查看提交记录, 并能看到文件的修改
+$ git log--stat
+
+# 显示指定文件相关的每一次diff
+$ git log-p [file]
+
+# 显示指定文件是什么人在什么时间修改过
+$ git blame [file]
+
+# 显示暂存区和工作区的差异
+$ git diff
+
+# 显示暂存区和上一个commit的差异
+$ git diff --cached []
+
+# 显示工作区与当前分支最新commit之间的差异
+$ git diff HEAD
+
+# 显示两次提交之间的差异
+$ git diff [first-branch]...[second-branch]

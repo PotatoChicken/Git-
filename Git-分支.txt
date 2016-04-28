@@ -1,0 +1,43 @@
+# 创建并切换分支
+$ git checkout -b dev
+
+# 合并分支
+$ git merge dev
+
+# 删除分支
+$ git branch -d dev
+
+# 删除远程分支
+$ git push origin --delete <branchName>
+
+# 查看各分支及追踪的远程分支
+$ git branch -vv
+
+# 强行删除未合并的分支
+$ git branch -D feature-vulcan
+
+# 查看详细的远程仓库信息
+$ git remote show (remote-name)
+
+# 创建并切换分支, 并与远程分支关联, 作用是git pull的时候会从远程remotename/branch分支拉取数据
+$ git checkout -b [branch] [remotename]/[branch]
+
+# 改变当前本地仓库追踪的远程分支
+$ git branch -u origin/serverfix
+
+# 删除远程名为serverfix分支
+$ git push origin --delete serverfix
+
+# 新建一个分支，与指定的远程分支建立追踪关系
+$ git branch --track [branch] [remote-branch]
+
+# 建立追踪关系，在现有分支与指定的远程分支之间
+$ git branch --set-upstream [branch] [remote-branch]
+
+# 重命令远程分支(devel 分支重命名为 develop 分支)
+# 1. 删除远程分支
+$ git push --delete origin devel
+# 2. 重命名本地峰值
+$ git branch -m devel develop
+# 3. 推送本地分支
+$ git push origin develop

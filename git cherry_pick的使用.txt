@@ -1,0 +1,55 @@
+1、关于git中 cherry-pick的使用
+
+cherry-pick 其含义就是从其他分支众多的commit中选出一个commit应用在当前的工作分支中，该命令需要提供一个commit ID作为参数.操作过程相当于将该commit导出为补丁文件,然后在当前HEAD上重放,形成无论内容还是commit说明都一致的提交.
+
+问：如何把分支develop中的commit(38361a68138140827b31b72f8bbfd88b3705d77a)合并到分支master中？
+答：
+    # 先在develop中查看要合并的commit的commit id
+    git log
+    # 假设是 commit 38361a68138140827b31b72f8bbfd88b3705d77a
+
+    #切到master分支
+    git checkout master
+    
+    #最好把master更新到最新
+    git pull origin master
+
+    # 合并commit
+    git cherry-pick 38361a68138
+    
+    1、 如果顺利合并，结果是：
+    Finished one cherry-pick.
+    # On branch master
+    # Your branch is ahead of 'origin/master' by 3 commits.
+    
+    2、如果合并的过程中出现冲突,需要先解决冲突
+    Automatic cherry-pick failed.  After resolving the conflicts,
+    mark the corrected paths with 'git add <paths>' or 'git rm <paths>'
+    and commit the result with: 
+ 
+        git commit -c 15a2b6c61927e5aed6718de89ad9dafba939a90b
+
+    # 就跟普通的冲突一样，手工解决：
+
+    # 执行git status 看哪些文件出现冲突
+    git status  #查看那些文件出现冲突
+    
+    接着手动解决冲突的文件，解决完之后通过git add把改动添加到索引
+    git add 改的文件
+    
+    #继续cherry-pick
+    git cherry-pick --continue
+
+    #最后把改动上传到服务器
+    git push origin master
+
+2、合并多个commit
+
+Git从1.7.2版本开始支持批量cherry-pick，就是一次可以cherry-pick一个区间的commit。
+  1、git cherry-pick <start-commit-id>..<end-commit-id>
+ 或者
+  2、git cherry-pick <start-commit-id>^..<end-commit-id>
+
+前者表示把<start-commit-id>到<end-commit-id>之间(左开右闭，不包含start-commit-id)的提交cherry-pick到当前分支；
+后者表示把<start-commit-id>到<end-commit-id>之间(闭区间，包含start-commit-id)的提交cherry-pick到当前分支。
+其中，<start-commit-id>到<end-commit-id>只需要commit-id的前6位即可，并且<start-commit-id>在时间上必须早于<end-commit-id>

@@ -1,0 +1,33 @@
+1、显示已有的tag
+
+$ git tag
+
+我们可以用特定的搜索模式列出符合条件的标签。在 Git 自身项目仓库中，有着超过 240 个标签，如果你只对 1.4.2 系列的版本感兴趣，可以运行下面的命令：
+$ git tag -l "v1.4.2.*"
+
+
+2、新建标签
+
+$ git tag -a v1.4 -m 'my version 1.4'
+
+可以使用 git show 命令查看相应标签的版本信息，并连同显示打标签时的提交对象。
+
+$ git show v1.4
+
+
+3、后期加注标签
+
+//显示提交的commit
+$ git log --pretty=oneline 
+
+//在对应的commit上打tag
+$ git tag -a v1.2 9fceb02
+
+4、分享tag
+
+默认情况下，git push 并不会把标签传送到远端服务器上，只有通过显式命令才能分享标签到远端仓库
+
+$ git push origin v1.5
+
+如果要一次推送所有本地新增的标签上去，可以使用 --tags 选项：
+$ git push origin --tags

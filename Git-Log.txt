@@ -160,3 +160,8 @@ Date:   Fri Jun 4 12:58:53 2010 +0200
  README |    2 +-
  1 files changed, 1 insertions(+), 1 deletions(-)
 同样的基本信息，但更紧凑 —— 它仍然让你看到相对改动，和改动了哪些文件。
+
+
+
+
+git log --author="wenjun.zhong" --since="2016-3-1" --before="2016-4-1" --pretty=tformat: --numstat | gawk '{ add += $1 ; subs += $2 ; loc += $1 - $2 } END { printf "added lines: %s removed lines : %s total lines: %s\n",add,subs,loc }' 

@@ -1,0 +1,7 @@
+1、移除add all误添加的file
+
+    git rm --cached file  # Git 将不再跟踪此文件，尽管它仍然是在您的硬盘上
+
+    或者
+    
+    git reset HEAD file   # Unstaged changes after reset

@@ -46,10 +46,10 @@ cherry-pick 其含义就是从其他分支众多的commit中选出一个commit�
 2、合并多个commit
 
 Git从1.7.2版本开始支持批量cherry-pick，就是一次可以cherry-pick一个区间的commit。
-  1、git cherry-pick <start-commit-id>..<end-commit-id>
- 或者
-  2、git cherry-pick <start-commit-id>^..<end-commit-id>
+  1、git cherry-pick start-commit-id..end-commit-id
+ 或者	
+  2、git cherry-pick start-commit-id^..end-commit-id
 
-前者表示把<start-commit-id>到<end-commit-id>之间(左开右闭，不包含start-commit-id)的提交cherry-pick到当前分支；
-后者表示把<start-commit-id>到<end-commit-id>之间(闭区间，包含start-commit-id)的提交cherry-pick到当前分支。
-其中，<start-commit-id>到<end-commit-id>只需要commit-id的前6位即可，并且<start-commit-id>在时间上必须早于<end-commit-id>
+前者表示把start-commit-id到end-commit-id之间(左开右闭，不包含start-commit-id)的提交cherry-pick到当前分支；
+后者表示把start-commit-id到end-commit-id之间(闭区间，包含start-commit-id)的提交cherry-pick到当前分支。
+其中，start-commit-id到end-commit-id只需要commit-id的前6位即可，并且<start-commit-id>在时间上必须早于<end-commit-id>

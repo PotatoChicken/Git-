@@ -76,4 +76,25 @@ git submodule update
 这样所有submodule都更到最新了，add commit即可。
 
 
+三、删除Submodule
+
+git 并不支持直接删除Submodule需要手动删除对应的文件:
+
+1、cd 主项目文件夹
+
+2、
+git rm --cached A
+rm -rf A
+rm .gitmodules
+
+更改git的配置文件config:
+1、vim .git/config
+可以看到Submodule的配置信息
+[submodule "A"]
+  url = git@github.com:jjz/A.git
+
+2、删除submodule相关的内容,然后提交到远程服务器:
+git commit -a -m 'remove A submodule'
+
+
 原文链接：http://www.jianshu.com/p/384c73fe173f

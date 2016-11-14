@@ -1,0 +1,11 @@
+git will track the files sometimes even if you added the file which shouldn't be tracked in .gitignore
+
+In that case you should remove the cache first then add all.
+
+Important : Commit your current changes
+
+git rm -r --cached .
+
+git add .
+
+git commit -m "file tracking - changed"

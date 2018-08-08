@@ -1,0 +1,34 @@
+1、修改最近的一次 commit
+
+    git commit --amend 
+
+2、修改某次的 commit 内容
+   git使用amend选项提供了最后一次commit的反悔。但是对于历史提交呢，就必须使用rebase了。 
+
+       git rebase -i HEAD~3 
+
+       表示要修改当前版本的倒数第三次状态。 
+
+        这个命令出来之后，会出来三行东东： 
+
+        pick:******* 
+
+        pick:******* 
+
+        pick:******* 
+
+        如果你要修改哪个，就把那行的pick改成edit，然后退出。 
+
+
+
+        这时通过git log你可以发现，git的最后一次提交已经变成你选的那个了，这时再使用： 
+
+        git commit -amend 
+
+        来对commit进行修改。 
+
+        修改完了之后，要回来对不对？ 
+
+        使用git rebase --continue 
+
+        OK，一切都搞定了。
